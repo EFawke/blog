@@ -1,6 +1,6 @@
 // import { fetchLatestPosts } from '../lib/data';
-import { Card, Text, Flex, Badge } from "@radix-ui/themes";
-import Link from 'next/link';
+// import { Card, Text, Flex, Badge } from "@radix-ui/themes";
+// import Link from 'next/link';
 // import Image from 'next/image';
 
 export const BlogNav = async () => {
