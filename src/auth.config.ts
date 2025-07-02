@@ -1,4 +1,4 @@
-import NextAuth, { NextAuthConfig } from 'next-auth'
+import { NextAuthConfig } from 'next-auth'
 
 export const authConfig = {
   pages: {
