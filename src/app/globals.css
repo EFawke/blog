@@ -1,0 +1,376 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.my_promise {
+  max-width: 350px;
+}
+
+.navigation_button {
+  text-decoration: none;
+}
+
+.nav-select,
+.nav-selected {
+  height: 1px;
+  margin-right: 1rem;
+  display: inline-flex;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-select {
+  width: 2rem;
+}
+
+.nav-selected {
+  width: 4rem;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon_pos {
+  margin-top: 5px;
+  margin-left: -5px;
+}
+
+.animate_up_right {
+  animation: up-right .2s ease-out forwards;
+}
+
+@keyframes up-right {
+  from {
+    transform: translate(0px, 0px)
+  }
+
+  to {
+    transform: translate(5px, -5px)
+  }
+}
+
+.animate_down_left {
+  animation: down-left .2s ease-out forwards;
+}
+
+@keyframes down-left {
+  from {
+    transform: translate(5px, -5px)
+  }
+
+  to {
+    transform: translate(0, 0)
+  }
+}
+
+.not_selected_project {
+  background: transparent;
+  border: none;
+}
+
+.tech_stack {
+  padding: 0.2rem 1rem;
+  border-radius: 1rem;
+  background: #00808052;
+  display: flex;
+  align-items: center;
+}
+
+#weird_flex_bro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#left_page {
+  width: 50%;
+  position: sticky;
+  height: 100vh;
+}
+
+#right_page {
+  width: 50%;
+}
+
+@media screen and (max-width: 1167px) {
+  #left_page {
+    width: 100%;
+    position: relative;
+    height: unset;
+    padding-bottom: 0;
+  }
+
+  #right_page {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  #weird_flex_bro {
+    flex-direction: column;
+    margin: 0rem 5%;
+  }
+
+  #nav_box {
+    display: none;
+  }
+
+  #links {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding-bottom: 0;
+  }
+
+  #about>div {
+    margin-top: 0;
+  }
+}
+
+.blog-content {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.blog-content>p>strong {
+  font-size: 1.3rem;
+}
+
+.blog-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-3);
+  margin: 2rem 0;
+}
+
+.blog-content h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  font-weight: 600;
+}
+
+.blog-content ul,
+.blog-content ol {
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-content blockquote {
+  border-left: 3px solid var(--accent-9);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--gray-11);
+}
+
+.blog-content pre {
+  background: var(--gray-2);
+  padding: 1rem;
+  border-radius: var(--radius-3);
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.blog-content code {
+  font-family: monospace;
+  background: var(--gray-3);
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius-1);
+}
+
+.google-btn {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.google-signin-btn {
+  align-items: center;
+  background-color: #fff;
+  color: #5f6368;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  transition: background-color 0.2s ease-in-out;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.google-signin-btn:hover {
+  background-color: #f7f8f8;
+}
+
+.google-icon {
+  height: 18px;
+  margin-right: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.reaction-name.ppd-fullerene-fibers {
+  color: #FF6B6B;
+}
+
+.reaction-bar.ppd-fullerene-fibers {
+  background-color: #FF6B6B;
+}
+
+.reaction-name.fulleroferrocene {
+  color: #4ECDC4;
+}
+
+.reaction-bar.fulleroferrocene {
+  background-color: #4ECDC4;
+}
+
+.reaction-name.lanthanum-metallofullerene {
+  color: #FFD93D;
+}
+
+.reaction-bar.lanthanum-metallofullerene {
+  background-color: #FFD93D;
+}
+
+.reaction-name.fullerene-intercalated-graphite {
+  color: #C77DFF;
+}
+
+.reaction-bar.fullerene-intercalated-graphite {
+  background-color: #C77DFF;
+}
+
+.reaction-name.methanofullerene {
+  color: #FF922B;
+}
+
+.reaction-bar.methanofullerene {
+  background-color: #FF922B;
+}
+
+.reaction-name.graphene-nanoribbons {
+  color: #74C0FC;
+}
+
+.reaction-bar.graphene-nanoribbons {
+  background-color: #74C0FC;
+}
+
+.reaction-name.scandium-metallofullerene {
+  color: #63E6BE;
+}
+
+.reaction-bar.scandium-metallofullerene {
+  background-color: #63E6BE;
+}
+
+.reaction-name.carbon-86-epoxy-resin {
+  color: #F783AC;
+}
+
+.reaction-bar.carbon-86-epoxy-resin {
+  background-color: #F783AC;
+}
+
+.blog_thumbnail {
+  width: 30%;
+}
+
+.tools_container_mobile {
+  display: none !important;
+}
+
+.blog_container_main_flex {
+  flex-direction: row !important;
+}
+
+.blog-card-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 840px) {
+  .top_container {
+    flex-direction: column;
+  }
+
+  #controls {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .blog-container {
+    margin: 0 1rem;
+  }
+
+  .blog_thumbnail {
+    width: 100%;
+    object-position: top;
+    height: 7rem;
+  }
+
+  .blog_card_details_container {
+    justify-content: end !important;
+  }
+
+  .tools_container {
+    display: none !important;
+  }
+
+  .tools_container_mobile {
+    display: flex !important;
+  }
+
+  .blog_container_main_flex {
+    flex-direction: column !important;
+  }
+}
+
+.go_back_link:hover {
+  text-decoration: underline;
+}
