@@ -4,7 +4,7 @@ import {
   BlogPostRowWithType
 } from './definitions';
 
-const sql = postgres(process.env.POSTGRES_URL!);
+const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 export async function fetchLatestPosts() {
   try {
@@ -25,7 +25,7 @@ export async function fetchLatestPosts() {
     return data;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch the latest invoices.');
+    throw new Error('Failed to fetch the latest posts.');
   }
 }
 
