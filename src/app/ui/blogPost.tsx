@@ -2,6 +2,7 @@ import { BlogPostRowWithType } from "@/app/lib/definitions"
 import { Heading, Container, Flex, Badge } from "@radix-ui/themes";
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function BlogPost({ post }: { post: BlogPostRowWithType[] }) {
     return (
@@ -12,7 +13,9 @@ export function BlogPost({ post }: { post: BlogPostRowWithType[] }) {
 
             <Flex direction="column" gap="4">                
                 {post[0].headerimage && (
-                    <img
+                    <Image
+                        width={100}
+                        height={100}
                         src={post[0].headerimage}
                         alt="Header"
                         style={{

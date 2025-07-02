@@ -1,6 +1,7 @@
 import { fetchLatestPosts } from '../lib/data';
 import { Card, Text, Flex, Badge } from "@radix-ui/themes";
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const BlogNav = async () => {
     const latestPosts = await fetchLatestPosts();
@@ -12,7 +13,7 @@ export const BlogNav = async () => {
                 return (
                     <Card key={post.blogid}>
                         <Flex className="blog_container_main_flex" gap="1rem" style={{ padding: "0.5rem" }} width="100%">
-                            <img className="blog_thumbnail" src={post.headerimage} alt="Blog Image" style={{ objectFit: "cover", borderRadius: "8px" }} />
+                            <Image className="blog_thumbnail" width={100} height={100} src={post.headerimage} alt="Blog Image" style={{ objectFit: "cover", borderRadius: "8px" }} />
                             <Flex direction="column" align="start" width="100%">
                                 <Flex mb="2" gap="2" direction="row" align="center">
                                     <Link href={`/post/${post.blogid}`}><Text size="4" weight="medium" className="blog-card-link" style={{ cursor: 'pointer', color: "var(--accent-a11)" }}>{post.blogtitle}</Text></Link>
