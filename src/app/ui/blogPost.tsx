@@ -2,16 +2,17 @@ import { BlogPostRowWithType } from "@/app/lib/definitions"
 import { Heading, Container, Flex, Badge } from "@radix-ui/themes";
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
+import {ScheduleDemoOptimized} from "./components/scheduleDemo/ScheduleDemoOptimized";
 // import Image from 'next/image';
 
 export function BlogPost({ post }: { post: BlogPostRowWithType[] }) {
     return (
         <Container size="3" className="blog-container">
             <Flex gap="4" pt="4" pb="4" mb="5" mt="5" direction="row" justify="between" id="header">
-                <Link href="/" className = "go_back_link" style={{cursor: 'pointer', color: "var(--accent-a11)", fontSize: "var(--font-size-6)" }}>Go back</Link>
+                <Link href="/" className="go_back_link" style={{ cursor: 'pointer', color: "var(--accent-a11)", fontSize: "var(--font-size-6)" }}>Go back</Link>
             </Flex>
 
-            <Flex direction="column" gap="4">                
+            <Flex direction="column" gap="4">
                 {post[0].headerimage && (
                     <img
                         src={post[0].headerimage}
@@ -57,6 +58,15 @@ export function BlogPost({ post }: { post: BlogPostRowWithType[] }) {
                                     }}
                                 />
                             )}
+
+                            {element.blocktype === 'component' && (() => {
+                                switch (element.blockcontent) {
+                                    case 'ScheduleDemoOptimized':
+                                        return <ScheduleDemoOptimized />;
+                                    default:
+                                        return null;
+                                }
+                            })()}
                         </div>
                     ))}
                 </Flex>
