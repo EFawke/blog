@@ -13,7 +13,6 @@ export interface ReactionType {
     name: string,
     runs: number
 }
-  
 
 export async function runScheduleAlgorithm(
     numAboveMean: number,
@@ -37,9 +36,7 @@ export async function runScheduleAlgorithm(
     setPercentageStep(numAboveMean)
     const schedule = [];
     let availableSlots = slots;
-
     const meanRunsPlusX = meanRuns + numAboveMean;
-
     for (let i = 0; i < sortedReactions.length; i++) {
         const numberOfInitialRuns = Math.floor(sortedReactions[i].runs / meanRunsPlusX);
         const numberLeftOver = sortedReactions[i].runs - (meanRunsPlusX * numberOfInitialRuns);
@@ -54,7 +51,6 @@ export async function runScheduleAlgorithm(
             setNumSlots(availableSlots)
             setSlots(schedule)
             setNumSlots(availableSlots)
-
             if (stepDelay) {
                 await new Promise(resolve => setTimeout(resolve, stepDelay));
             }
@@ -68,7 +64,6 @@ export async function runScheduleAlgorithm(
             availableSlots -= 1;
             setSlots(schedule)
             setNumSlots(availableSlots)
-            // this.setState({ slots: schedule, numSlots: availableSlots });
 
             if (stepDelay) {
                 await new Promise(resolve => setTimeout(resolve, stepDelay));
@@ -121,7 +116,7 @@ export async function scheduleReactions(
     let lastFail = 0;
     let lastSuccess = null;
 
-    while (true) { // exponential
+    while (true) {
         const { success } = await runScheduleAlgorithm(
             numAboveMean, 
             sortedReactions, 
@@ -143,7 +138,7 @@ export async function scheduleReactions(
             break;
         } else {
             lastFail = numAboveMean;
-            numAboveMean *= 2;
+            numAboveMean *= 2; // exponential
 
             if (numAboveMean > reacRunsSum) {
                 lastSuccess = reacRunsSum;
@@ -152,8 +147,6 @@ export async function scheduleReactions(
         }
     }
 
-    // let bestSchedule : ReactionType[]  = []
-    // let bestSchedule : ReactionType[] | null = []
     let low = lastFail
     let high = lastSuccess;
 
@@ -176,39 +169,9 @@ export async function scheduleReactions(
         );
 
         if (success) {
-            // const bestSchedule = schedule;
             high = mid;
         } else {
             low = mid + 1;
         }
-    }
-
-    // At this point low === high: that's the smallest value that *could* succeed.
-    // We need to run it one last time to be sure and to grab the schedule.
-    const { 
-        success: finalOk, 
-        // schedule: finalSched 
-    } = await runScheduleAlgorithm(
-        numAboveMean, 
-        sortedReactions, 
-        meanRuns, 
-        slots,
-        setIterationCounter,
-        iterationCounter,
-        setStatus,
-        setPercentageStep,
-        setIsPaused,
-        isPaused,
-        setSlots,
-        setNumSlots,
-        stepDelay
-    );
-
-    // let bestSchedule : ReactionType[] | null = []
-
-    if (finalOk) {
-        // bestSchedule = finalSched;
-    } else {
-        console.log("no valid schedule")
     }
 }

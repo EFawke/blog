@@ -1,39 +1,39 @@
-import { Flex } from "@radix-ui/themes";
-
-const shimmer =
-  'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 dark:before:via-white/10 before:to-transparent';
+import { Flex, Skeleton, Card } from "@radix-ui/themes";
 
 export function BlogCardSkeleton() {
   return (
-    <div
-      className={`${shimmer} relative overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-950 p-2 shadow-sm`}
-    >
-      <div className="flex p-4 flex-row">
-        <div className="flex h-auto w-50 bg-neutral-800 p-6 rounded-md"></div>
-        <div className="flex-col ml-5 w-full">
-          <div className="flex h-5 w-60 bg-neutral-800 p-3 rounded-md"></div>
-          <div className="flex h-5 w-full bg-neutral-800 p-0 rounded-md mt-5"></div>
-          <div className="flex h-5 w-60 bg-neutral-800 p-0 rounded-md mt-2"></div>
-          <div className="flex flex-row justify-between h5 w-full flex-row p-0 rounded-md mt-5">
-            <div className="flex flex-row">
-              <div className="flex h-5 w-10 bg-neutral-800 p-0 rounded-md mr-2 mt-2"></div>
-              <div className="flex h-5 w-10 bg-neutral-800 p-0 rounded-md mr-2 mt-2"></div>
-              <div className="flex h-5 w-10 bg-neutral-800 p-0 rounded-md mr-2 mt-2"></div>
-            </div>
-            <div className="flex h-5 w-20 bg-neutral-800 p-0 rounded-md mt-2"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Card>
+      <Flex className="blog_container_main_flex" gap="1rem" style={{ padding: "0.5rem" }} width="100%">
+        <Skeleton className="blog_thumbnail" height="122px" width="158px" style={{ borderRadius: "8px" }}></Skeleton>
+        <Flex direction="column" align="start" gap="4">
+          <Flex mb="2" gap="2" direction="row" align="center">
+            <Skeleton width="200px" height="20px"></Skeleton>
+          </Flex>
+          <Flex align="start" gap="1" direction="column">
+            <Skeleton width="350px" height="20px"></Skeleton>
+            <Skeleton width="300px" height="20px"></Skeleton>
+          </Flex>
+          <Flex gap="2" direction="row" width="100%" className="blog_card_details_container" justify="between" align="end">
+            <Flex className="tools_container" gap="3" direction="row" align="center">
+              <Skeleton width="60px" height="20px"></Skeleton> <Skeleton width="60px" height="20px"></Skeleton>
+            </Flex>
+            <Skeleton width="60px" height="20px"></Skeleton>
+          </Flex>
+          <Flex className="tools_container_mobile" gap="3" direction="row" align="center">
+            <Skeleton width="60px" height="20px"></Skeleton> <Skeleton width="60px" height="20px"></Skeleton>
+          </Flex>
+        </Flex>
+      </Flex>
+    </Card>
   );
 }
 
 export function BlogNavSkeleton() {
   return (
-    <Flex direction="column" gap="4" mt="6">
-      <BlogCardSkeleton/>
-      <BlogCardSkeleton/>
-      <BlogCardSkeleton/>
+    <Flex direction="column" gap="4">
+      <BlogCardSkeleton />
+      <BlogCardSkeleton />
+      <BlogCardSkeleton />
     </Flex>
   )
 }
