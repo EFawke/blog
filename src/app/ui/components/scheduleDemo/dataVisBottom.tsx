@@ -16,7 +16,7 @@ export function DataVisBottom({ slots }: DataVisBottomProps) {
             ) : (
                 <Flex wrap="wrap" gap="2" align="end">
                     {slots.map((slot, index) => {
-                        const height = (slot.runs * 0.4)
+                        const height = (slot.runs * 0.39)
                         return (
                             <div
                                 key={index}
