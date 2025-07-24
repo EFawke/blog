@@ -16,7 +16,7 @@ export default function Home() {
               <Heading weight="medium" size="6">Some words about coding</Heading>
               <Flex direction="row" mt="8">
                 <Image
-                  src="/pixil-frame-0 (6).png"
+                  src="/pixil-frame-0 (7).png"
                   alt="Projects"
                   width={130}
                   height={230}
