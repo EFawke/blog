@@ -14,15 +14,13 @@ export default function Home() {
             <Flex gap="4" direction="column">
               <Heading mt="6" size="9">Ted Fawke</Heading>
               <Heading weight="medium" size="6">Some words about coding</Heading>
-              <Flex gap="4" direction="row" align="end">
-              
-              <Image
-                src="/reading.png" // this references /public/projects.png
-                alt="Projects"
-                width={240}         // specify width
-                height={240}        // and height
-              />
-              {/* <Heading weight="medium" size="6">Recent Posts</Heading> */}
+              <Flex direction="row" mt="8">
+                <Image
+                  src="/pixil-frame-0 (2).png"
+                  alt="Projects"
+                  width={130}
+                  height={230}
+                />
               </Flex>
             </Flex>
             <Links />
