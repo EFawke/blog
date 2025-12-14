@@ -35,7 +35,7 @@ export function BlogPost({ post }: { post: BlogPostRowWithType[] }) {
                     left: 0,
                     width: "100%",
                     zIndex: 999,
-                    background: "var(--color-background)",
+                    background: "black",
                     transition: "top 0.3s ease",
                 }}
             >
