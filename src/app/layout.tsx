@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Theme accentColor="blue" radius="full" appearance="dark" style={{background: "black"}}>
+        <Theme accentColor="blue" radius="full" appearance="dark" style={{backgroundImage: `url("https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg")`, backgroundRepeat: "no-repeat", backgroundPosition: "top"}}>
           {children}
         </Theme>
       </body>
