@@ -156,19 +156,24 @@ body {
 }
 
 .blog-content {
-  line-height: 1.6;
+  margin-bottom: var(--space-6);
   font-size: 1.1rem;
+  line-height: 2;
 }
 
 .blog-content>p>strong {
-  font-size: 1.3rem;
+  margin-bottom: calc(-1 * var(--space-3));
+  font-size: 1.6rem;
+  display: block;
 }
 
 .blog-content img {
   max-width: 100%;
-  height: auto;
-  border-radius: var(--radius-3);
   margin: 2rem 0;
+  display: block;
+  margin-top: calc(-1 * var(--space-4));
+  margin-bottom: calc(-1 * var(--space-4));
+  border: 1px solid white;
 }
 
 .blog-content h2 {
