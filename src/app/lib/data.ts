@@ -50,6 +50,6 @@ export async function fetchPostById(id: string) {
     return data;
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch invoice.');
+    throw new Error('Failed to fetch blog post.');
   }
 }

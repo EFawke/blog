@@ -335,9 +335,23 @@ code {
   flex-direction: row !important;
 }
 
-.blog-card-link:hover {
+.blog-card-link:hover .blog-title-text {
   text-decoration: underline;
 }
+
+.blog-card-link:focus-visible {
+  outline: 2px solid var(--accent-a9);
+  outline-offset: 3px;
+}
+
+.blog-card-link:active {
+  outline: 2px solid var(--accent-a9);
+}
+
+.blog-card-link:focus {
+  outline: 2px solid var(--accent-a9);
+}
+
 
 @media (max-width: 840px) {
   .top_container {
