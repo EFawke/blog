@@ -1,6 +1,6 @@
 "use client"
 
-import { PersonIcon, MoonIcon, SunIcon, HamburgerMenuIcon } from "@radix-ui/react-icons"
+import { PersonIcon, MoonIcon, SunIcon, HamburgerMenuIcon, Cross1Icon } from "@radix-ui/react-icons"
 import { Flex, Text, Card, HoverCard, Link, Container, IconButton, Button } from "@radix-ui/themes";
 import HomeLink from "./HomeLink";
 import { logout } from "../actions/logout";
@@ -74,7 +74,9 @@ const Header = ({ props }: { props: HeaderProps }) => {
                         </Flex>
                         <Flex align='center' id='mobile_navigation'>
                             <IconButton variant='outline' onClick={() => toggleId(id)}>
-                                <HamburgerMenuIcon />
+                                {
+                                    id === 'mobile_closed' ? <HamburgerMenuIcon width="24" height="24" /> : <Cross1Icon width="24" height="24" />
+                                }
                             </IconButton>
                         </Flex>
                     </Flex>
