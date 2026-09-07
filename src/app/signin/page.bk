@@ -1,0 +1,120 @@
+"use client"
+
+import React from "react";
+import axios from "axios";
+import { Flex, TextField, Heading, Button, Card, Container, Text } from "@radix-ui/themes";
+import Pass from "./Pass";
+import { cookies } from 'next/headers'
+
+import { useEffect, useState } from "react";
+import ErrorBanner from "./ErrBanner";
+import LoginSuccess from "./LoginSuccess";
+
+export default async function Login({ logUserIn }: { logUserIn: () => void }) {
+    const cookieStore = await cookies()
+    const [loading, setLoading] = useState(false)
+    const [errMsg, setErrMsg] = useState<string>("");
+    const [errDsp, setErrDsp] = useState(false);
+    const [successMessage, setSuccessMessage] = useState(false);
+    const [shook, setShook] = useState(false);
+
+    const toggleDsp = () => {
+        setErrDsp(!errDsp)
+    }
+
+    const handleError = (message: string) => {
+        setShook(true);
+        setErrMsg(message)
+        setErrDsp(true)
+
+        setTimeout(() => {
+            setShook(false);
+        }, 1034)
+    }
+
+    async function handleSubmit(e) {
+        setLoading(true)
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        const user = {
+            email: formData.get("email"),
+            password: formData.get("password")
+        }
+
+        if (!user.email.includes('@')) {
+            setLoading(false);
+            handleError("Must be a valid email");
+            return;
+        }
+
+        try {
+            const res = await axios.post("/api/login", user);
+            setLoading(false);
+            logUserIn(res.data);
+            setSuccessMessage(true)
+        }
+
+        catch (e) {
+            if (e.response.status === 409 || e.response.status === 404) {
+                // email already registered
+                setLoading(false);
+                handleError(e.response.data);
+                return;
+            }
+        }
+    }
+
+    return (
+        <Container size='4' mb='4'>
+            <Flex
+                gap="4"
+                mt='9'
+                justify='center'
+                direction="row"
+                style={{
+                    position: "relative",
+                    width: "100%"
+                }}>
+
+                {
+                    successMessage ?
+                        (
+                            <Flex direction='column' justify='center' gap='6'>
+                                <Heading>Success</Heading>
+                                <LoginSuccess></LoginSuccess>
+                            </Flex>
+                        ) : (
+                            <Flex direction="column" align="center" gap="6">
+                                <Flex direction = 'column' gap='2' align="center">
+                                    <Heading>Sign in</Heading>
+                                    <Text>Sign in here to write comments</Text>
+                                </Flex>
+                                <Card className={shook ? "shook" : "unshook"} style={{ width: 'fit-content', padding: '30px', margin: '0 auto' }}>
+                                    <form onSubmit={handleSubmit}>
+                                        <Flex gap='2' direction='column' className="form_item">
+                                            <label htmlFor="email">Email</label>
+                                            <TextField.Root style={{ width: "200px" }} required type="email" id="email" name="email" autoComplete="email" enterKeyHint="next"></TextField.Root>
+                                        </Flex>
+                                        <Pass label="Password" formLabel="password" storedPass="" />
+                                        <Flex mt='4' direction='column' gap='2' className="form_item">
+                                            {
+                                                loading ? (
+                                                    <Button type="submit" disabled>Processing</Button>
+                                                ) :
+                                                    (
+                                                        <Button type="submit">Submit</Button>
+                                                    )
+                                            }
+                                        </Flex>
+                                    </form>
+                                    <ErrorBanner errDsp={errDsp} errMsg={errMsg} toggleDsp={toggleDsp}></ErrorBanner>
+                                </Card>
+                            </Flex>
+                        )
+                }
+            </Flex>
+        </Container>
+    )
+}

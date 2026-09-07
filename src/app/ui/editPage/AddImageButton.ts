@@ -17,7 +17,7 @@
 //         const file = event.target.files[0];
 //         if (file) {
 //             this.setState({ file });
-//             const reader = new FileReader();
+            // const reader = new FileReader();
 //             reader.onloadend = () => {
 //                 this.setState({ image: reader.result });
 //             };

@@ -1,2 +1,6 @@
-onlyBuiltDependencies:
-  - bcrypt
+allowBuilds:
+  '@clerk/shared': true
+  '@tailwindcss/oxide': true
+  bcrypt: true
+  sharp: true
+  unrs-resolver: true
