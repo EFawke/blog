@@ -82,7 +82,7 @@ export default function Home() {
               <Flex justify='start' direction='column' className='homepage_section_right_content'>
                 <Flex direction='column' gap='1'>
                   <Heading size='5' mt='3' weight='bold'>Blog</Heading>
-                  <Text color='gray' size='3' mb='3' as='div'>The Industrial Revolution and it's consequences.</Text>
+                  <Text color='gray' size='3' mb='3' as='div'>The Industrial Revolution and its consequences.</Text>
                 </Flex>
                 <BlogSection />
               </Flex>
