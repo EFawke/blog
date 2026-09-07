@@ -15,8 +15,8 @@ export default function Login() {
   }
 
   return (
-    <Theme radius='large'>
-      <Card style={{ width: '450px', padding: '0' }}>
+    <Theme style={{ width: '100%', maxWidth: '450px', padding: '0' }} radius='large'>
+      <Card style={{ width: '100%', padding: '0' }}>
         <Flex pb='5' pt='5' pl='5' pr='5' direction='column'>
           <Heading size='5' mb='3'>Sign in</Heading>
           <Flex mb='4'>

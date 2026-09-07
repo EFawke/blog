@@ -3,7 +3,7 @@ import { Container, Flex, Section } from "@radix-ui/themes"
 
 export default function LoginPage() {
   return (
-    <Container size='4' mb="9"
+    <Container px={{ initial: '4', sm: '6' }} mb="9"
       mt="0">
       <Flex
         gap="4"
