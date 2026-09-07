@@ -1,6 +1,5 @@
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
-import { Card, Flex, Text, Heading, Badge, Link, Theme, Button, IconButton } from "@radix-ui/themes";
-// import { PostMeta } from "@/app/lib/posts"
+import { Flex, Text, Heading, Badge, Link, Theme } from "@radix-ui/themes";
 interface ProjecMeta {
     title: string;
     stack: string[];

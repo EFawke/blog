@@ -1,8 +1,7 @@
 "use client"
 
-import React from "react";
-import { PersonIcon, ExitIcon, MoonIcon, SunIcon, HamburgerMenuIcon } from "@radix-ui/react-icons"
-import { Flex, Text, Card, HoverCard, Link, Container, IconButton, Button, Dialog, TextField } from "@radix-ui/themes";
+import { PersonIcon, MoonIcon, SunIcon, HamburgerMenuIcon } from "@radix-ui/react-icons"
+import { Flex, Text, Card, HoverCard, Link, Container, IconButton, Button } from "@radix-ui/themes";
 import HomeLink from "./HomeLink";
 import { logout } from "../actions/logout";
 import { useState } from "react";

@@ -1,5 +1,5 @@
 import "@radix-ui/themes/styles.css";
-import { Button, Flex, Link } from "@radix-ui/themes";
+import { Flex, Link } from "@radix-ui/themes";
 import { GitHubLogoIcon, LinkedInLogoIcon, EnvelopeClosedIcon } from "@radix-ui/react-icons"
 
 export function Links() {

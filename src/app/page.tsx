@@ -1,10 +1,9 @@
-import { Container, Flex, Heading, Em, Button, Card, Text, Section } from "@radix-ui/themes";
+import { Container, Flex, Heading, Text, Section } from "@radix-ui/themes";
 import { Links } from "./ui/links";
 import Landscape from "./landscape/Landscape";
 import { CelebrationProvider } from "./celebration/CelebrationContext";
 import { RevealLayer } from "./celebration/RevealLayer";
 import { ContactButton } from "./celebration/ContactButton";
-import { BlogPostCard } from "./ui/BlogPostCard";
 import { BlogSection } from './BlogSection';
 import { ProjectCard } from './ui/ProjectCard'
 

@@ -2,7 +2,7 @@ import { verifySession } from '@/app/lib/session'
 import { redirect } from 'next/navigation'
 import { AdminDashboard } from '@/app/dashboard/AdminDashboard'
 import { UserDashboard } from '@/app/dashboard/UserDashboard'
-import { Container, Flex, Section } from '@radix-ui/themes'
+import { Container, Flex } from '@radix-ui/themes'
 
 export default async function Dashboard() {
   const session = await verifySession()
