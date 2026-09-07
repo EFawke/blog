@@ -22,21 +22,8 @@ export default function HomeLink({ appearance }: { appearance: 'light' | 'dark' 
                 boxShadow: '0 0 0 1px var(--gray-a7)',
             }}
         >
-            <span style={{
-                position: 'absolute',
-                inset: 0,
-                backgroundImage: appearance == 'dark' ? 'url(/dark-idle.GIF)' : 'url(/light-idle.GIF)',
-                backgroundSize: '6rem',
-                backgroundPosition: 'center top',
-                backgroundRepeat: 'no-repeat',
-                opacity: hovered ? 0 : 1,
-            }} />
-            <span style={{
-                position: 'absolute', inset: 0,
-                backgroundImage: appearance == 'dark' ? 'url(/dark-hover.GIF)' : 'url(/light-hover.GIF)',
-                backgroundSize: '6rem', backgroundPosition: 'center top', backgroundRepeat: 'no-repeat',
-                opacity: hovered ? 1 : 0,
-            }} />
+            <span className="logo-idle" style={{ opacity: hovered ? 0 : 1 }} />
+            <span className="logo-hover" style={{ opacity: hovered ? 1 : 0 }} />
         </a>
     )
 }

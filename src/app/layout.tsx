@@ -10,21 +10,40 @@ export const metadata: Metadata = {
   description: "Some words about coding",
 };
 
+// Runs before first paint so the correct theme is on <html> immediately — no dark flash.
+const themeScript = `
+(function () {
+  try {
+    var m = document.cookie.match(/(?:^|;\\s*)appearance=(light|dark)/);
+    var a = m ? m[1] : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var d = document.documentElement;
+    d.classList.add(a);
+    d.style.colorScheme = a;
+  } catch (e) {}
+})();
+`;
+
 export default async function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
+  const session = await verifySession();
 
-  const session = await verifySession()
-
-  const cookieStore = await cookies()
-  const stored = cookieStore.get('appearance')?.value
+  const cookieStore = await cookies();
+  const stored = cookieStore.get("appearance")?.value;
   const initialAppearance =
-    stored === 'light' || stored === 'dark' ? stored : undefined
+    stored === "light" || stored === "dark" ? stored : undefined;
 
   return (
-    <html lang="en" style={{scrollPaddingTop: 'calc(24px + 4rem)'}}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      style={{ scrollPaddingTop: "calc(24px + 4rem)" }}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <ThemeProvider
           loggedIn={!!session}
@@ -35,5 +54,5 @@ export default async function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

@@ -463,3 +463,21 @@ html {
     display: none;
   }
 }
+
+.logo-idle,
+.logo-hover {
+  position: absolute;
+  inset: 0;
+  background-size: 6rem;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+html:not(.dark) .logo-idle  { background-image: url(/light-idle.GIF); }
+html.dark       .logo-idle  { background-image: url(/dark-idle.GIF); }
+html:not(.dark) .logo-hover { background-image: url(/light-hover.GIF); }
+html.dark       .logo-hover { background-image: url(/dark-hover.GIF); }
+
+html:not(.dark) .radix-themes {
+  background-color: #FAF9F6;
+}
