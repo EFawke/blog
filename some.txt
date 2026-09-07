@@ -19,11 +19,11 @@ CREATE TABLE sessions (
 CREATE INDEX idx_sessions_user_id ON sessions(user_id);
 
 CREATE TABLE applied_jobs (
-    id                    text UNIQUE NOT NULL,
-    title                 text NOT NULL,
-    description           text NOT NULL,
-    link                  text NOT NULL,
-    applied_at            timestamptz NOT NULL DEFAULT now()
+    id          text PRIMARY KEY,
+    title       text NOT NULL,
+    description text NOT NULL,
+    link        text NOT NULL,
+    applied_at  timestamptz NOT NULL DEFAULT now()
 );
 
 CREATE TABLE answered_questions (
@@ -35,12 +35,12 @@ CREATE TABLE answered_questions (
 );
 
 CREATE TABLE skipped_jobs (
-    id           text        UNIQUE NOT NULL,
-    title        text        NOT NULL,
-    description  text        NOT NULL,
-    link         text        NOT NULL,
-    skipped_at   timestamptz NOT NULL DEFAULT now(),
-    reason       text        NOT NULL
+    id          text PRIMARY KEY,
+    title       text NOT NULL,
+    description text NOT NULL,
+    link        text NOT NULL,
+    skipped_at  timestamptz NOT NULL DEFAULT now(),
+    reason      text NOT NULL
 );
 
 CREATE TABLE images (
