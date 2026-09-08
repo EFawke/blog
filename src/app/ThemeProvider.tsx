@@ -37,17 +37,17 @@ export default function ThemeProvider({
 
     const props = { loggedIn, username, appearance, toggleAppearance }
 
-    let windowHeight: number = 0;
-    if (typeof window !== 'undefined') {
-        windowHeight = window?.innerHeight;
-    }
+    // let windowHeight: number = 0;
+    // if (typeof window !== 'undefined') {
+    //     windowHeight = window?.innerHeight;
+    // }
 
     return (
         <Theme
             accentColor='blue'
             panelBackground='solid'
             radius='large'
-            scaling={windowHeight > 710 ? '110%' : '100%'}
+            // scaling={windowHeight > 710 ? '110%' : '100%'}
         >
             <Header props={props} />
             {children}

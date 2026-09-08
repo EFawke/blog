@@ -58,18 +58,18 @@ export default function Home() {
               <Flex justify='start' direction='column' className='homepage_section_right_content'>
                 <Flex direction='column' gap='1'>
                   <Heading size='5' mt='3' weight='bold'>About Me</Heading>
-                  <Text color='gray' size='3' mb='3' as='div'>Greetings, traveller.</Text>
+                  <Text color='gray' size='4' mb='2' as='div'>Greetings, traveller.</Text>
                 </Flex>
                 <Text style={{textAlign: 'justify', textJustify: 'inter-character'}} size='4' mb='2' as='div'>I'm a full stack web developer with 5 years of commercial experience building and maintaining e-commerce sites at an agency where downtime cost real money. While there, the bulk of my day-to-day was in WordPress and PHP, although a significant part of the work also entailed JavaScript frameworks, namely Remix and React with TypeScript.</Text>
-                <Text style={{textAlign: 'justify'}} size='4' mb='2' as='div'>Over the years I've owned several projects end-to-end, which taught me that a sensible design grounded in the user's real problem usually beats a smart solution that you have to explain. When possible I like to share the lessons I pick up here on my blog.</Text>
-                <Text style={{textAlign: 'justify'}} size='4' mb='2' as='div'>In my free time, I like to use my skills for less serious purposes, automating repetitive tasks and building the occasional dashboard. Right now I'm pretty into surfing, learning game development with raylib, and chess.</Text>
+                <Text style={{textAlign: 'justify', textJustify: 'inter-character'}} size='4' mb='2' as='div'>Over the years I've owned several projects end-to-end, which taught me that a sensible design grounded in the user's real problem usually beats a smart solution that you have to explain. When possible I like to share the lessons I pick up here on my blog.</Text>
+                <Text style={{textAlign: 'justify', textJustify: 'inter-character'}} size='4' mb='2' as='div'>In my free time, I like to use my skills for less serious purposes, automating repetitive tasks and building the occasional dashboard. Right now I'm pretty into surfing, learning game development with raylib, and chess.</Text>
               </Flex>
             </Section>
             <Section className='homepage_section' id='projects'>
               <Flex justify='start' direction='column' className='homepage_section_right_content'>
                 <Flex direction='column' gap='1'>
                   <Heading size='5' mt='3' weight='bold'>Projects</Heading>
-                  <Text color='gray' size='3' mb='3' as='div'>Works I've finished recently and am proud of.</Text>
+                  <Text color='gray' size='4' mb='3' as='div'>Works I've finished recently and am proud of.</Text>
                 </Flex>
                 {
                   projects.map((project, i) => 
@@ -82,7 +82,7 @@ export default function Home() {
               <Flex justify='start' direction='column' className='homepage_section_right_content'>
                 <Flex direction='column' gap='1'>
                   <Heading size='5' mt='3' weight='bold'>Blog</Heading>
-                  <Text color='gray' size='3' mb='3' as='div'>The Industrial Revolution and its consequences.</Text>
+                  <Text color='gray' size='4' mb='3' as='div'>The Industrial Revolution and its consequences.</Text>
                 </Flex>
                 <BlogSection />
               </Flex>

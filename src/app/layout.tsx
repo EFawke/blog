@@ -7,7 +7,7 @@ import { verifySession } from "./lib/session";
 
 export const metadata: Metadata = {
   title: "Ted Fawke",
-  description: "Some words about coding",
+  description: "Full Stack Web Developer",
 };
 
 // Runs before first paint so the correct theme is on <html> immediately — no dark flash.
