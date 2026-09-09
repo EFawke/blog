@@ -36,8 +36,7 @@ const projects = [
   {
     title: "Quick Update",
     stack: ["Remix", "TypeScript", "GraphQL", "Shopify", "Polaris"],
-    description:
-      "Merchant facing Shopify App for managing products.",
+    description: "Merchant facing Shopify App for managing products.",
     links: [
       { title: "github", href: "https://github.com/EFawke/quick-update" },
     ],
@@ -67,10 +66,13 @@ export default function Home() {
       <RevealLayer>
         <Landscape />
       </RevealLayer>
-      <Container px={{initial: '4', sm: '6'}}>
+      <Container px={{ initial: "4", sm: "6" }}>
         <Flex gap="1" id="weird_flex_bro">
-          <Section id="left_page" pt="9" pb="9" 
-          // pr="9"
+          <Section
+            id="left_page"
+            pt="9"
+            pb="9"
+            // pr="9"
           >
             <Flex
               justify="between"
@@ -82,43 +84,60 @@ export default function Home() {
               }}
             >
               <Flex direction="column" gap="2">
-                <Heading style={{ fontSize: "6rem", lineHeight: "1", maxWidth: '450px' }}>
+                <Heading
+                  style={{
+                    fontSize: "6rem",
+                    lineHeight: "1",
+                    maxWidth: "450px",
+                  }}
+                >
                   Ted Fawke
                 </Heading>
                 <Heading size="6" color="gray" weight="medium">
                   Full-stack web developer
                 </Heading>
               </Flex>
-              <Terminal/>
-              <Flex gap="5" direction="row" align='center'>
+              <Terminal />
+              <Flex
+                gap="5"
+                direction="row"
+                align="center"
+                className="hero_bottom"
+              >
                 <ContactButton />
-                <Link href="mailto:teduardof@gmail.com">
-                  <EnvelopeClosedIcon
-                    height="20"
-                    width="20"
-                    className="socials"
-                  />
-                </Link>
-                <Link href="https://github.com/EFawke">
-                  <GitHubLogoIcon height="20" width="20" className="socials" />
-                </Link>
-                <Link href="https://www.linkedin.com/in/ted-fawke-34b658231/">
-                  <LinkedInLogoIcon
-                    height="20"
-                    width="20"
-                    className="socials"
-                  />
-                </Link>
+                <Flex gap="4">
+                  <Link href="mailto:teduardof@gmail.com">
+                    <EnvelopeClosedIcon
+                      height="25"
+                      width="25"
+                      className="socials"
+                    />
+                  </Link>
+                  <Link href="https://github.com/EFawke">
+                    <GitHubLogoIcon
+                      height="25"
+                      width="25"
+                      className="socials"
+                    />
+                  </Link>
+                  <Link href="https://www.linkedin.com/in/ted-fawke-34b658231/">
+                    <LinkedInLogoIcon
+                      height="25"
+                      width="25"
+                      className="socials"
+                    />
+                  </Link>
+                </Flex>
               </Flex>
             </Flex>
           </Section>
-          <Flex 
-          // id="right_page" 
-          direction="column">
-            <Section 
-            // className="homepage_section" 
-            id="about"
-            
+          <Flex
+            id="right_page"
+            direction="column"
+          >
+            <Section
+              // className="homepage_section"
+              id="about"
             >
               <Flex
                 justify="start"
@@ -142,18 +161,26 @@ export default function Home() {
                   mb="2"
                   as="div"
                 >
-                  I'm a full-stack web developer with 5 years of commercial experience building and maintaining e-commerce sites at an agency where downtime cost real money. Day to day that meant WordPress and PHP, plus a good deal of Remix and React with TypeScript.
+                  I'm a full-stack web developer with 5 years of commercial
+                  experience building and maintaining e-commerce sites at an
+                  agency where downtime cost real money. Day to day that meant
+                  WordPress and PHP, plus a good deal of Remix and React with
+                  TypeScript.
                 </Text>
                 <Text
-                  style={{
-                    // textAlign: "justify",
-                    // textJustify: "inter-character",
-                  }}
+                  style={
+                    {
+                      // textAlign: "justify",
+                      // textJustify: "inter-character",
+                    }
+                  }
                   size="3"
                   mb="2"
                   as="div"
                 >
-                  Owning projects end-to-end taught me that a sensible design grounded in the user's real problem usually beats a clever one you have to explain.
+                  Owning projects end-to-end taught me that a sensible design
+                  grounded in the user's real problem usually beats a clever one
+                  you have to explain.
                 </Text>
                 {/* <Text
                   style={{
@@ -170,11 +197,10 @@ export default function Home() {
                 </Text> */}
               </Flex>
             </Section>
-            <Section 
-            // className="homepage_section" 
-            id="projects"
-            // pb='0'
-            
+            <Section
+              // className="homepage_section"
+              id="projects"
+              // pb='0'
             >
               <Flex
                 justify="start"
@@ -182,9 +208,12 @@ export default function Home() {
                 // className="homepage_section_right_content"
               >
                 <Flex direction="column" gap="1" mb="4">
-                  <Heading color='gray' size="3"
-                  //  mt="3" 
-                   weight="bold">
+                  <Heading
+                    color="gray"
+                    size="3"
+                    //  mt="3"
+                    weight="bold"
+                  >
                     Projects
                   </Heading>
                   {/* <Text color="gray" size="4" mb="3" as="div">
@@ -196,18 +225,19 @@ export default function Home() {
                 ))}
               </Flex>
             </Section>
-            <Section 
-                        // pb='0'
+            <Section
+              // pb='0'
 
-            // className="homepage_section" 
-            id="blog">
+              // className="homepage_section"
+              id="blog"
+            >
               <Flex
                 justify="start"
                 direction="column"
                 className="homepage_section_right_content"
               >
                 <Flex direction="column" gap="1" mb="4">
-                  <Heading color='gray' size="3" mt="3" weight="bold">
+                  <Heading color="gray" size="3" mt="3" weight="bold">
                     Blog
                   </Heading>
                   {/* <Text color="gray" size="4" mb="3" as="div">

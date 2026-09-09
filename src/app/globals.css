@@ -72,6 +72,7 @@
 }
 
 .terminal {
+  max-width: 400px;
   margin-right: var(--space-9);
 }
 
@@ -79,7 +80,10 @@
   padding-right: var(--space-9);
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 840px) {
+  .hero_bottom {
+    justify-content: start !important;
+  }
   /* .blog_theme_container {
     padding-left: 0;
     padding-bottom: 0;
