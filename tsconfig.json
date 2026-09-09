@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-, "src/app/signin/page.bk", "src/app/dashboard/ui/UploadImage.bk"  ],
+, "src/app/signin/page.bk", "src/app/dashboard/ui/UploadImage.bk", "src/app/ui/Terminal.bk"  ],
   "exclude": [
     "node_modules"
   ]

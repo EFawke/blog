@@ -9,8 +9,8 @@ import { useState } from "react";
 interface HeaderProps {
     loggedIn: boolean,
     username?: string,
-    appearance: 'light' | 'dark',
-    toggleAppearance: (appearance: 'light' | 'dark') => void,
+    // appearance: 'light' | 'dark',
+    // toggleAppearance: (appearance: 'light' | 'dark') => void,
 }
 
 const Header = ({ props }: { props: HeaderProps }) => {
@@ -33,14 +33,16 @@ const Header = ({ props }: { props: HeaderProps }) => {
                 zIndex: 50,
                 top: '0'
             }}>
-                <Container px={{ initial: '4', sm: '6' }}>
+      <Container px={{initial: '4', sm: '6'}}>
                     <Flex style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <HomeLink appearance={props.appearance} />
+                        <HomeLink 
+                        // appearance={props.appearance} 
+                        />
                         <Flex gap='5' align='center' id='desktop_navigation'>
                             <Link style={{ cursor: 'pointer' }} href="/#about"><Text>About</Text></Link>
                             <Link style={{ cursor: 'pointer' }} href="/#projects"><Text>Projects</Text></Link>
                             <Link style={{ cursor: 'pointer' }} href="/#blog"><Text>Blog</Text></Link>
-                            <IconButton variant='outline' onClick={() => props.toggleAppearance(props.appearance)}>{props.appearance === 'dark' ? <SunIcon /> : <MoonIcon />}</IconButton>
+                            {/* <IconButton variant='outline' onClick={() => props.toggleAppearance(props.appearance)}>{props.appearance === 'dark' ? <SunIcon /> : <MoonIcon />}</IconButton> */}
                             <HoverCard.Root>
                                 <HoverCard.Trigger>
                                     <Link href='/dashboard'>
@@ -82,7 +84,8 @@ const Header = ({ props }: { props: HeaderProps }) => {
                     </Flex>
                 </Container>
             </Card>
-            <div id={id} style={{ backgroundColor: props.appearance === 'light' ? '#FAF9F6' : 'var(--color-background)' }}>
+            {/* <div id={id} style={{ backgroundColor: props.appearance === 'light' ? '#FAF9F6' : 'var(--color-background)' }}> */}
+            <div id={id} style={{ backgroundColor: 'var(--color-background)' }}>
                 <Link style={{ cursor: 'pointer' }} href="/#about" onClick={() => toggleId(id)}><Text size='8'>About</Text></Link>
                 <Link style={{ cursor: 'pointer' }} href="/#projects" onClick={() => toggleId(id)}><Text size='8'>Projects</Text></Link>
                 <Link style={{ cursor: 'pointer' }} href="/#blog" onClick={() => toggleId(id)}><Text size='8'>Blog</Text></Link>
