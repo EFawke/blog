@@ -37,7 +37,6 @@
 #right_page {
   /* width: calc(50% - (var(--space-4) / 2)); */
   width: 50%;
-
 }
 
 #desktop_navigation {
@@ -52,7 +51,6 @@
   display: none;
 }
 
-
 .homepage_section {
   padding-top: var(--space-9);
   padding-bottom: var(--space-9);
@@ -64,7 +62,6 @@
 
 .blog_theme_container {
   padding: var(--space-4);
-  /* padding-bottom: var(--space-4); */
 }
 
 #full_screen_mobile_menu {
@@ -84,10 +81,6 @@
   .hero_bottom {
     justify-content: start !important;
   }
-  /* .blog_theme_container {
-    padding-left: 0;
-    padding-bottom: 0;
-  } */
 
   .terminal {
     margin-right: 0;
@@ -521,7 +514,7 @@ html {
 }
 
 
-/* dark mode html toggles */
+/* dark mode html toggles in case you wanted to add that back in again */
 /* html:not(.dark) .logo-idle {
   background-image: url(/light-idle.GIF);
 }

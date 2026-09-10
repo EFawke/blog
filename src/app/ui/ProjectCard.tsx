@@ -28,7 +28,7 @@ export const ProjectCard = ({ project, index }: { project: ProjecMeta, index: nu
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
                     borderRadius: 'var(--radius-6)',
-                    boxShadow: 'var(--shadow-6)'
+                    boxShadow: 'var(--shadow-3)'
                 }}>
                 <Flex justify='end' direction='column' gap='2' className='blog_post_card'
                     style={{
@@ -42,7 +42,7 @@ export const ProjectCard = ({ project, index }: { project: ProjecMeta, index: nu
                         radius='small' style={{ background: 'transparent' }}>
                             <Flex direction='column' gap='2' style={{ width: '100%' }} wrap='wrap'>
                                 <Flex gap='2' className='blog_link_container' wrap='wrap'>
-                                    <Link href={project?.links[0].href}><Heading highContrast className='card_font_legible' size='4'>{title}</Heading></Link>
+                                    <Link href={project?.links[0].href} target='_blank'><Heading highContrast className='card_font_legible' size='4'>{title}</Heading></Link>
                                     <ArrowTopRightIcon color='var(--accent-9)' className='card_pointer'></ArrowTopRightIcon>
                                 </Flex>
                                 <Flex gap='2' justify='between' direction='column' wrap='wrap'>

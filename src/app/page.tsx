@@ -49,11 +49,11 @@ const projects = [
     description:
       "Data visualisation and production planning tool for Eve Online.",
     links: [
+      { title: "site", href: "https://evesubsystemanalysis.com/" },
       {
         title: "github",
         href: "https://github.com/EFawke/EveSubsystemAnalysis",
-      },
-      { title: "site", href: "https://evesubsystemanalysis.com/" },
+      }
     ],
     image:
       "https://res.cloudinary.com/dlkofkgto/image/upload/v1788799258/dev_blog/at4jk0qit6sy7mylf0vo.png",

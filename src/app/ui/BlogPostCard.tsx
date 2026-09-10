@@ -21,7 +21,7 @@ export const BlogPostCard = ({ key, post }: { key: number, post: PostMeta }) => 
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
                     borderRadius: 'var(--radius-6)',
-                    boxShadow: 'var(--shadow-6)'
+                    boxShadow: 'var(--shadow-3)'
                 }}>
                 <Flex wrap='wrap' justify='end' direction='column' gap='2' className='blog_post_card'
                     style={{
