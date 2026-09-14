@@ -16,7 +16,6 @@ export type PostMeta = {
   backgroundImage: string;
 };
 
-// List all posts (metadata only), newest first — for the index page
 export function getAllPosts(): PostMeta[] {
   const files = fs.readdirSync(postsDirectory);
 
@@ -41,7 +40,6 @@ export function getAllPosts(): PostMeta[] {
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-// Full post (metadata + rendered HTML) — for a single post page
 export async function getPostBySlug(slug: string) {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -61,7 +59,6 @@ export async function getPostBySlug(slug: string) {
   };
 }
 
-// Just the slugs — feeds generateStaticParams
 export function getAllSlugs(): string[] {
   return fs
     .readdirSync(postsDirectory)

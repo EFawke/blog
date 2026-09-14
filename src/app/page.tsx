@@ -120,7 +120,7 @@ export default function Home() {
                       className="socials"
                     />
                   </Link>
-                  <Link href="https://www.linkedin.com/in/ted-fawke-34b658231/">
+                  <Link href="https://www.linkedin.com/in/ted-fawke/">
                     <LinkedInLogoIcon
                       height="25"
                       width="25"

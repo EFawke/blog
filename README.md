@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Greetings, traveller
 
-## Getting Started
+This is a portfolio site built using next.js.
+It hosts blog posts and has a custom auth system.
 
-First, run the development server:
+# Setup
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The setup's pretty normal for a next.js app.
+You'll have to define an env.local to run this at home.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The Required fields are:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Contact Form
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This is set up using (Google Developer Console)[https://console.cloud.google.com] and a gmail account.
+You'll need to get the following data from there.
 
-## Learn More
+MY_EMAIL
+MY_PASSWORD
+SESSION_SECRET
 
-To learn more about Next.js, take a look at the following resources:
+Also create an account on (Cloudinary)[https://console.cloudinary.com/].
+This is used to 'host' images, as we couldn't otherwise with vercel!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Cloudinary
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+CLOUDINARY_CLOUD_NAME
+CLOUDINARY_API_KEY
+CLOUDINARY_API_SECRET
+CLOUDINARY_FOLDER_NAME
 
-## Deploy on Vercel
+# Postgres
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Local env postgres variables.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+SSL=true
+USER
+PORT=5432
+NODE_ENV=local
+
+# Blog
+
+You can add or remove blog posts by updating the files in /posts.
+Posts must be .md format and contain a header with the following metadata:
+
+---
+title: Your Title
+date: "2026-09-14"
+excerpt: A short summary for the index page.
+tags: [The, Tags, You, Want, To, Include]
+length: 2 min read
+backgroundImage: "yoururl.com"
+---
+
+Naturally, this means that you'll have to make a commit to post a blog post.
