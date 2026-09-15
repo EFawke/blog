@@ -143,7 +143,7 @@ const scheduleReactions = (reactions, slots) => {
     const meanRuns = Math.round(reacRunsSum / slots)
     if (slots <= sortedReactions.length) { // Queue can't be optimised
         return {
-            success: false,
+            success: true,
             schedule: sortedReactions
         }
     }
