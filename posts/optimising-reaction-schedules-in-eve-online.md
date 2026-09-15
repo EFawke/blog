@@ -141,8 +141,11 @@ const scheduleReactions = (reactions, slots) => {
     const sortedReactions = reactions.sort((a, b) => a.runs - b.runs)
     const reacRunsSum = sortedReactions.reduce((acc, curr) => acc + Number(curr.runs), 0);
     const meanRuns = Math.round(reacRunsSum / slots)
-    if (slots <= sortedReactions.length) {
-        return sortedReactions; // Queue can't be optimised
+    if (slots <= sortedReactions.length) { // Queue can't be optimised
+        return {
+            success: false,
+            schedule: sortedReactions
+        }
     }
 
     let numAboveMean = 1;
