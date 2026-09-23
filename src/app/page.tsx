@@ -157,8 +157,9 @@ export default function Home() {
                 >
                   I'm a full-stack web developer with 5 years of commercial
                   experience building and maintaining e-commerce sites at an
-                  agency where downtime cost real money. I'm pretty handy with
-                 modern React frameworks and I know what makes users tick.
+                  agency where downtime cost real money. Day to day that meant 
+                  WordPress and PHP, plus a lot of Remix and React with TypeScript, 
+                  from storefronts to merchant-facing Shopify apps.
                 </Text>
                 <Text
                   size="3"

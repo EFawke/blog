@@ -51,10 +51,10 @@
   display: none;
 }
 
-.homepage_section {
+/* .homepage_section {
   padding-top: var(--space-9);
   padding-bottom: var(--space-9);
-}
+} */
 
 .homepage_section_right_content {
   height: calc(100vh - (var(--space-9) + var(--space-9)));

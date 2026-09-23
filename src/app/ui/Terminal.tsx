@@ -17,7 +17,7 @@ const UIButton = ({ color }: { color: string }) => {
 
 export const Terminal = () => {
     const array = [
-        "React and Node dev with a focus on UX"
+        "building e-commerce sites and apps"
     ];
 
     const textArray = useMemo(
