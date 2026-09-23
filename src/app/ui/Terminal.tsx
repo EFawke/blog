@@ -17,19 +17,9 @@ const UIButton = ({ color }: { color: string }) => {
 
 export const Terminal = () => {
     const array = [
-        "woah, how's it going?", 
-        "sorry, i'm not used to having visitors...", 
-        "...can i get you something?", 
-        "tea?", 
-        "coffee, maybe?",
-        "well i'll be here if you need anything...",
-        "feel free to have a look around",
-        "what are you here for?",
-        "we've got github links, blog posts, etc",
-        "oh, we've got biscuits",
-        "a diet, eh? sorry to hear that",
-        "i won't mention the biscuits again"
-    ]
+        "React and Node dev with a focus on UX"
+    ];
+
     const textArray = useMemo(
         () => array,
         [],

@@ -105,7 +105,7 @@ export default function Home() {
                 className="hero_bottom"
               >
                 <ContactButton />
-                <Flex gap="4">
+                <Flex className='social_links_container'>
                   <Link href="mailto:teduardof@gmail.com">
                     <EnvelopeClosedIcon
                       height="25"
@@ -136,13 +136,11 @@ export default function Home() {
             direction="column"
           >
             <Section
-              // className="homepage_section"
               id="about"
             >
               <Flex
                 justify="start"
                 direction="column"
-                // className="homepage_section_right_content"
               >
                 <Flex direction="column" gap="3">
                   <Heading color="gray" size="3" mt="3" weight="bold">
@@ -153,27 +151,16 @@ export default function Home() {
                   </Text>
                 </Flex>
                 <Text
-                  style={{
-                    textAlign: "justify",
-                    textJustify: "inter-character",
-                  }}
                   size="3"
                   mb="2"
                   as="div"
                 >
                   I'm a full-stack web developer with 5 years of commercial
                   experience building and maintaining e-commerce sites at an
-                  agency where downtime cost real money. Day to day that meant
-                  WordPress and PHP, plus a good deal of Remix and React with
-                  TypeScript.
+                  agency where downtime cost real money. I'm pretty handy with
+                 modern React frameworks and I know what makes users tick.
                 </Text>
                 <Text
-                  style={
-                    {
-                      // textAlign: "justify",
-                      // textJustify: "inter-character",
-                    }
-                  }
                   size="3"
                   mb="2"
                   as="div"
@@ -182,30 +169,14 @@ export default function Home() {
                   grounded in the user's real problem usually beats a clever one
                   you have to explain.
                 </Text>
-                {/* <Text
-                  style={{
-                    // textAlign: "justify",
-                    // textJustify: "inter-character",
-                  }}
-                  size="4"
-                  mb="2"
-                  as="div"
-                >
-                  Owning projects end-to-end taught me that a sensible design grounded in the user's real problem usually beats a clever one you have to explain.
-
-
-                </Text> */}
               </Flex>
             </Section>
             <Section
-              // className="homepage_section"
               id="projects"
-              // pb='0'
             >
               <Flex
                 justify="start"
                 direction="column"
-                // className="homepage_section_right_content"
               >
                 <Flex direction="column" gap="1" mb="4">
                   <Heading
@@ -216,9 +187,6 @@ export default function Home() {
                   >
                     Projects
                   </Heading>
-                  {/* <Text color="gray" size="4" mb="3" as="div">
-                    Works I've finished recently and am proud of.
-                  </Text> */}
                 </Flex>
                 {projects.map((project, i) => (
                   <ProjectCard key={i} project={project} index={i} />
@@ -226,9 +194,6 @@ export default function Home() {
               </Flex>
             </Section>
             <Section
-              // pb='0'
-
-              // className="homepage_section"
               id="blog"
             >
               <Flex
@@ -240,9 +205,6 @@ export default function Home() {
                   <Heading color="gray" size="3" mt="3" weight="bold">
                     Blog
                   </Heading>
-                  {/* <Text color="gray" size="4" mb="3" as="div">
-                    The Industrial Revolution and its consequences.
-                  </Text> */}
                 </Flex>
                 <BlogSection />
               </Flex>
